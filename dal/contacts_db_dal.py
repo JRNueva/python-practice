@@ -1,21 +1,16 @@
-import sqlite3
+from dal.db_dal import DbDaoABC
+from dal.abstract_contacts import ContactsABC
 
-class ContactsDbDao:
+class ContactsDbDao(DbDaoABC, ContactsABC):
     
-    def get_db_connection(self):
-        return sqlite3.connect('address_book.db')
-
     def retrieve_contacts(self):
         sql = "SELECT name, contact_no FROM contacts"
-        
-        conn = self.get_db_connection()
-        cursor = conn.execute(sql)
         
         result = {
             "contacts": []
         }
         
-        for row in cursor:
+        for row in self.execute_select(sql):
             result["contacts"].append({
                 "name": row[0],
                 "contact_no": row[1]
