@@ -1,0 +1,14 @@
+{
+    "contacts" : [
+        {
+            "name" : "John Doe",
+            "contact_no" : "000000000000",
+            "email" : "john.doe@example.com"
+        },
+        {
+            "name" : "Jane Smith",
+            "contact_no" : "000000000000",
+            "email" : "jane.smith@example.com"
+        }
+    ]
+}
